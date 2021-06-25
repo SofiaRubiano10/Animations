@@ -37,111 +37,213 @@ html, body {
     align-items: center;
 }
 
-.cubo-P{
+
+.Menu2{
     display: flex;
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    animation: ease-in-out;
-    animation-name: slidein;
-    animation-duration: 3s;
+    width: 90%;
     justify-content: center;
-    font-size: 40px;
-    align-items: flex-start;
-    
 }
 
-.cubo1{transition: width 2s, height 2s, background-color 2s,transform 5s, opacity 6s; }
-.cubo2{transition: width 2s, height 2s, background-color 2s,transform 5s,}
-
-
-
-.cubo1:hover{
-    background-color: burlywood;
-    width: 280px;
-    height: 280px;
-    transform: scale(0.5);
-    align-items: center;
-    opacity: 0;
-}
-
-.cubo2{
-    animation-name:;
-    background-color: chartreuse;
-}
-
-.cubo2:hover{
-    background-color: burlywood;
-    width: 280px;
-    height: 280px;
-    transform: scale(1);
-    align-items: center;
-}
-
-.michi{
+.Menu2 ul{
     display: flex;
-    width: 50%;
-    height: auto;
-    animation: ease-in-out;
-    animation-name: "";
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+}
+
+.Menu2 ul li{
+    background-color: #A9ECFF;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: auto;
+    padding: 10px 15px;
+    margin: 10px;
+    height: 90%;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: border 1s, background-color 1s, box-shadow 1s;
+}
+
+.Menu2 ul li:hover{
+    background-color: #578ae7;
+    border: 1px solid white;
+    box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.41);
+}
+
+/* sección de giros */
+#Giros{
+    display: flex;
+    width: 100%;
+    height: min-content;
+    justify-content: space-around;
+}
+
+.card2{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background-color: #A9ECFF;
+    margin: 20px;
     transition: transform 3s;
 }
-
-.michi:hover{
-    transform:rotate(360deg) ;
+.transiciones, .giros, .Menu2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.boton{
+    display: flex;
+    justify-content: center;
 }
 
-.cubo3{
-animation-iteration-count: infinite;
-animation-name: temblar;
-animation-duration: 3s;
+/* responsividad */
+
+/* cartas*/
+@media screen and (min-width:375px) and (max-width:420px) {
+    .transiciones, .giros, .Menu2{
+        grid-template-columns: 1fr;
+    } 
 }
 
-
-
-
-
-/* animacion */
-@keyframes slidein {
-    from {
-    margin-left: 100%;
-    }
-    to {
-        margin-left: 0%;
-    }
-}
-@keyframes slideinTitle {
-    from {
-    right: 100%;
-    }
-    to {
-        right:50%;
-    }
+@media screen and (min-width:421px) and (max-width:800px) {
+    .transiciones, .giros, .Menu2{
+        grid-template-columns: 1fr 1fr;
+    } 
 }
 
-@keyframes slideup {
-    from {
-        margin-top:100%;
+/* keys de transiciones */
+@keyframes llegadaDerecha {
+    0%{
+        opacity: 0;
+        transform: translateX(1000px)
     }
-    to {
-        margin-top:0%;
+    60%{
+        opacity: 0.8;
+        transform: translateX(-80px);
+    }
+    80%{
+        opacity: 0,9;
+        transform: translateX(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes llegadaIzquierda {
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px)
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateX(80px);
+    }
+    80%{
+        opacity: 0,9;
+        transform: translateX(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes llegadaArriba {
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px)
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(80px);
+    }
+    80%{
+        opacity: 0,9;
+        transform: translateY(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes llegadaAbajo {
+    0%{
+        opacity: 0;
+        transform: translateY(1000px)
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(-80px);
+    }
+    80%{
+        opacity: 0,9;
+        transform: translateY(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes temblar {
+/* giros */
+.giro_completo, .giro_completo_rigth, .giro_completo_left, .mediogiro_completo, .mediogiro_rigth, .mediogiro_left {
+    transition: transform 3s;
+}
+.giro_completo:hover{
+   transform: rotate(360deg);
+}
+.giro_completo_rigth:hover{
+    transform: rotate(360deg);
+ }
+ .giro_completo_left:hover{
+    transform: rotate(-360deg);
+ }
+ .mediogiro_completo:hover{
+    transform: rotate(180deg);
+ }
+ .mediogiro_rigth:hover{
+    transform: rotate(180deg);
+ }
+ .mediogiro_left:hover{
+    transform: rotate(-180deg);
+ }
+ .giro_infinito{
+    transition: transform 3s;
+ }
+ .giro_infinito:hover{
+    transform: rotate(36000deg);
+ }
 
-    0% {
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(20deg);
-    }
-    75%{
-        transform: rotate(-20deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+/* transiciones */
+.slideRigth {
+    animation-name: llegadaDerecha;
+    animation-duration: 3s;
+}
+.slideLeft{
+    animation-name: llegadaIzquierda;
+    animation-duration: 3s;
+}
+.slideUp{
+    animation-name: llegadaArriba;
+    animation-duration: 3s;
+}
+.slideDown{
+    animation-name: llegadaAbajo;
+    animation-duration: 3s;
+
 }
