@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: block;
+}
+.contes{
+    width: 100%;
+    height: 33.3vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* segunda animacion */
+a{
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(29, 171, 209, 1);
+    padding: 70px 30px;
+    font-family: 'calibri';
+    border-radius: 50%;
+    animation: animacion 2s linear infinite;
+}
+@keyframes animacion {
+    0%{
+        box-shadow: 0 0 0 0 rgba(29, 171, 209, .6), 0 0 0 0 rgba(29, 171, 209, .6) ;
+    }
+    30%{
+        box-shadow: 0 0 0 100px rgba(29, 171, 209, .0), 0 0 0 0 rgba(29, 171, 209, .6);
+    }
+    65%{
+        box-shadow: 0 0 0 100px rgba(29, 171, 209, .0), 0 0 0 30px rgba(29, 171, 209, .0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(29, 171, 209, .6), 0 0 0 30px rgba(29, 171, 209, .0);
+    }
+}
+
+/* primera animación */
+
+#cuadrado{
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    animation-name: mianimacion;
+    animation-duration: 4s;
+    position: relative;
+    animation-direction: reverse;
+    animation-timing-function: ease;
+    transition: transform 3s;
+    animation-iteration-count: infinite;
+}
+#cuadrado:hover{
+    transform: rotate(-360deg);
+}
+
+
+@keyframes mianimacion {
+    0%{
+        background-color: royalblue;
+        left: 200px;
+        top: 0px;
+    }
+    25%{
+        background-color: rgb(125, 154, 243);
+        left: 200px;
+        top: 0px;
+    }
+    50%{
+        background-color: rgb(43, 68, 143);
+        left: 200px;
+        top: 200px;
+    }
+    75%{
+        background-color: rgb(146, 168, 233);
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        background-color: rgb(7, 33, 112);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/* tercera animacion */
+.agrandar{
+    animation-name: agrandar;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+.agrandar img{
+    width: 200px;
+    height: 250px;
+}
+@keyframes agrandar {
+    from{
+        transform: scale(1.0);
+    }
+    to{
+        transform: scale(1.1);
+    }
+    
+}
